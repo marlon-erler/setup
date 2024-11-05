@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+guard() {
+    if [ -z "$1" ]; then
+	echo "$2"
+	exit
+    fi
+}
+
+cmd=$1
+guard "$cmd" "command not specified"
+
+pm=$2
+packages=${@:3}
+
+case $cmd in
+    add)
+	guard "$pm" "package manager not specified"
+	dir_path=$PKGLIST/$pm
+	mkdir -p $dir_path
+
+	for package in $packages; do
+	    echo "adding $pm/$package"
+	    touch $dir_path/$package
+	done	       
+	;;
+
+    rm)
+	guard "$pm" "package manager not specified"
+	dir_path=$PKGLIST/$pm
+
+	for package in $packages; do
+	    echo "removing $pm/$package"
+	    rm $dir_path/$package
+	done	       
+	;;
+
+    ls-a)
+	for pm_dir in $(ls $PKGLIST); do
+	    echo "$pm_dir:"
+	    ls $PKGLIST/$pm_dir
+	    echo "---"
+	done
+	;;
+
+    ls)
+	guard "$pm" "package manager not specified"
+	ls $PKGLIST/$pm
+	;;
+
+    *)
+	echo "unknown command"
+esac
+

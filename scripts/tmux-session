@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+guard() {
+    if [ -z "$1" ]; then
+	echo "$2"
+	exit
+    fi
+}
+
+name=$1
+guard "$name" "name not specified"
+
+paths=$2
+
+tmux new-session -d -s $name
+
+for path in $paths; do
+    base=$(basename $path)
+    mkdir -p $path
+    tmux new-window -n $base -t $name -c $path
+done

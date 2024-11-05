@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+guard() {
+    if [ -z "$1" ]; then
+	echo "$2"
+	exit
+    fi
+}
+
+cmd=$1
+guard "$cmd" "command not specified"
+
+case $cmd in
+    init)
+	cp ~/.prettierrc.yaml .
+	cp ~/.gitignore .
+	cp ~/.npmignore .
+	;;
+
+    mkbash)
+	name=$2
+	guard "$name" "script name not specified"
+
+	cd $SCRIPTS
+	touch $name
+	catstart $ASSETS/bashscript $name
+	;;
+
+    cmt)
+	message=$2
+	guard "$message" "message not specified"
+
+	git add .
+	git commit -m "$message"
+	;;
+
+    fmt)
+	prettier . --write
+	;;
+
+    *)
+	err nocmd
+esac

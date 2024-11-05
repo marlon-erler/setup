@@ -1,0 +1,33 @@
+
+#######
+
+export TZ=/usr/share/zoneinfo/UTC
+
+export A=~/A
+export BAK=$A/backups
+export ASSETS=$A/assets
+export SCRIPTS=$A/scripts
+export FILES=~/Documents
+export VAULT=$FILES/Vault
+export CODE=$FILES/Code
+
+export PKGLIST=$A/pkglist
+export PKGPERSIST=$A/pkg
+export APT=$PKGPERSIST/apt
+export APTCACHE=$APT/cache
+export APTLIB=$APT/lib
+
+export PATH=$PATH:~/.bun/bin:$SCRIPTS
+
+s() {
+    sudo chmod +x $SCRIPTS/*
+    source ~/.bashrc
+}
+
+guard() {
+    if [ -z "$1" ]; then
+	echo "$2"
+	exit
+    fi
+}
+export -f guard

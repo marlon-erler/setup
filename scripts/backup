@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+guard() {
+    if [ -z "$1" ]; then
+	echo "$2"
+	exit
+    fi
+}
+
+cmd=$1
+guard "$cmd" "command not specified"
+
+mkdir -p $BAK
+
+items="
+.bashrc
+.vimrc
+.tmux.conf
+.prettierrc.yaml
+.npmignore
+.gitignore
+.vim
+.tmux"
+
+case $cmd in
+    store)
+	for item in $items; do
+	    rm -rf $BAK/$item
+	    cp -r ~/$item $BAK
+	done
+	;;
+
+    restore)
+	for item in $items; do
+	    cp -r $BAK/$item ~
+	done
+	;;
+
+    *)
+	echo "unknown command"
+esac

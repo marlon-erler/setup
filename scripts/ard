@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+guard() {
+    if [ -z "$1" ]; then
+	echo "$2"
+	exit
+    fi
+}
+
+cmd=$1
+guard "$cmd" "command not specified"
+
+board=$2
+device=$3
+
+if [ -z $board ] || [ $board = 0 ]; then
+    board="arduno:avr:uno"
+fi
+if [ -z "$device" ]; then
+    device=0
+fi
+
+dev_path=dev/ttyACM$device
+
+case $cmd in
+    c)
+	arduino-cli compile -b $board
+	;;
+
+    r)
+	sudo chmod a+rw $dev_path
+	arduino-cli upload -b $board -p $dev_path
+	;;
+
+    ls)
+	arduino-cli board list
+	;;
+
+    *)
+	echo "unknown command"
+esac
