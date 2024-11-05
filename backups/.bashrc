@@ -144,7 +144,7 @@ export A=~/A
 export BAK=$A/backups
 export ASSETS=$A/assets
 export SCRIPTS=$A/scripts
-export FILES=$A/Files
+export FILES=~/Documents
 export VAULT=$FILES/Vault
 export CODE=$FILES/Code
 
