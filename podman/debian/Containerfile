@@ -41,6 +41,7 @@ RUN \
 	&& $HOME/A/scripts/setup \
 	&& export BAK=$HOME/A/backups \
 	&& $HOME/A/scripts/backup restore \
+	&& ls -la $HOME \
 	&& source $HOME/.bashrc \
 	&& echo $A \
 	&& $HOME/A/scripts/install-local \
