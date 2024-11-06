@@ -15,6 +15,7 @@ mkdir -p $BAK
 items="
 .config
 .vim
+.viminfo
 .vimrc
 .tmux
 .tmux.conf
