@@ -7,5 +7,4 @@ guard() {
     fi
 }
 
-ssh-keygen
-ckey
+cat ~/.ssh/*.pub

@@ -7,5 +7,7 @@ guard() {
     fi
 }
 
-ssh-keygen
-ckey
+name=$1
+guard "$name" "host username not specified"
+
+hy $name "$(ckey)"
