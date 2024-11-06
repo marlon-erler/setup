@@ -11,5 +11,3 @@ cat ~/A/assets/bashrc >> ~/.bashrc
 
 git config --global user.name marlon-erler
 git config --global user.email viridian035@gmail.com
-
-ssh-keygen
