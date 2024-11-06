@@ -11,3 +11,6 @@ cat ~/A/assets/bashrc >> ~/.bashrc
 
 git config --global user.name marlon-erler
 git config --global user.email viridian035@gmail.com
+
+cd ~/A
+git remote set-url origin git@github.com:marlon-erler/setup.git

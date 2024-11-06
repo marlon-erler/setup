@@ -5,8 +5,6 @@ RUN \
 	\
 	\
 	&& export HOME=/root \
-	&& export BAK=$HOME/A/backups \
-	&& export INSTALL=$HOME/A/installers \
 	\
 	\
 	&& apt update \
@@ -39,7 +37,11 @@ RUN \
 	&& curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 	&& git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm \
 	&& git clone https://github.com/marlon-erler/setup $HOME/A \
+	&& echo "=== RUNNING SETUP ===" \
 	&& $HOME/A/scripts/setup \
+	&& source $HOME/.bashrc \
+	&& echo $A \
+	&& $HOME/A/scripts/install-local \
 	&& $HOME/A/scripts/backup restore \
 	&& chsh root -s /bin/bash \
 	\
