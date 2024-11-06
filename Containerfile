@@ -25,9 +25,8 @@ RUN \
         http-server live-server \
         \
         \
-        && luarocks-5.1 install \
-        luafilesystem \
-	moonscript \\
+        && luarocks-5.1 install luafilesystem \
+        && luarocks-5.1 install moonscript \
         \
         \
         && curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
