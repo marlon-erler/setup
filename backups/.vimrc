@@ -11,6 +11,8 @@ set smarttab
 set mouse=a
 set updatetime=500
 set signcolumn=yes
+set encoding=utf-8
+set fileencoding=utf-8
 
 "Syntax
 hi MatchParen cterm=underline ctermbg=none ctermfg=blue
