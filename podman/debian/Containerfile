@@ -1,44 +1,44 @@
 FROM debian
 
 RUN \
-        echo "starting..." \
-        \
-        \
-        && export HOME=/root \
+	echo "starting..." \
+	\
+	\
+	&& export HOME=/root \
 	&& export BAK=$HOME/A/backups \
-        \
-        \
+	\
+	\
 	&& apt update \
-        && apt install -y \
-        bash tmux \
-        openssh-server openssl rsync \
-        git curl vim \
-        \
-        gcc libc6-dev \
-        nodejs npm \
-        rsync \
-        python3 python3-pip \
-        lua5.4 luarocks \
-        \
-        \
-        && curl -fsSL https://bun.sh/install | bash \
-        && npm install -g \
-        esbuild \
-        http-server live-server \
-        \
-        \
+	&& apt install -y \
+	bash tmux \
+	openssh-server openssl rsync \
+	git curl vim \
+	\
+	gcc libc6-dev \
+	nodejs npm \
+	rsync \
+	python3 python3-pip \
+	lua5.4 luarocks \
+	\
+	\
+	&& curl -fsSL https://bun.sh/install | bash \
+	&& npm install -g \
+	esbuild \
+	http-server live-server \
+	\
+	\
 	&& curl -fsSL https://install.julialang.org > julia-install \
-	&& sh julia-install -y
+	&& sh julia-install -y \
 	\
 	\
-        && luarocks install luafilesystem \
-        && luarocks install moonscript \
-        \
-        \
-        && curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
-        && git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm \
-        && git clone https://github.com/marlon-erler/setup $HOME/A \
-        && $HOME/A/scripts/setup \
+	&& luarocks install luafilesystem \
+	&& luarocks install moonscript \
+	\
+	\
+	&& curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
+	&& git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm \
+	&& git clone https://github.com/marlon-erler/setup $HOME/A \
+	&& $HOME/A/scripts/setup \
 	&& $HOME/A/scripts/backup restore \
 	&& chsh root -s /bin/bash \
-	
+
