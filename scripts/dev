@@ -24,6 +24,7 @@ case $cmd in
 	cd $SCRIPTS
 	touch $name
 	catstart $ASSETS/bashscript $name
+	vim $name
 	;;
 
     cmt)
