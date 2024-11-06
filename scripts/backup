@@ -13,7 +13,9 @@ guard "$cmd" "command not specified"
 mkdir -p $BAK
 
 items="
+.vim
 .vimrc
+.tmux
 .tmux.conf
 .prettierrc.yaml
 .npmignore

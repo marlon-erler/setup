@@ -15,6 +15,7 @@ tmux-session 01-MAIN "
     $A
     $A/podman/alpine
     $A/podman/debian
+    $BAK
     $SCRIPTS
     $ASSETS"
 
