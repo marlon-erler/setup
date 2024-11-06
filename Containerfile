@@ -4,7 +4,7 @@ RUN \
 	export HOME=/root \
 	\
 	\
-	apk add --no-cache \
+	&& apk add --no-cache \
 	bash tmux \
 	openssh openssh-server openssl rsync \
 	git curl vim \
