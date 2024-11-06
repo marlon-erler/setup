@@ -7,5 +7,4 @@ guard() {
     fi
 }
 
-ssh-keygen
-cat ~/.ssh/*.pub
+getent hosts host.containers.internal | awk '{print $1}'
