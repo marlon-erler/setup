@@ -26,6 +26,9 @@ RUN \
         http-server live-server \
         \
         \
+	&& curl -fsSL https://install.julialang.org | sh \
+	\
+	\
         && luarocks-5.1 install luafilesystem \
         && luarocks-5.1 install moonscript \
         \
