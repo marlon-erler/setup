@@ -30,4 +30,3 @@ guard() {
 	exit
     fi
 }
-export -f guard
