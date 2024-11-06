@@ -7,7 +7,7 @@ RUN \
 	git curl vim \
 	\
 	gcc \
-	node npm \
+	nodejs npm \
 	rsync \
 	python3 py3-pip \
 	lua luarocks \
