@@ -20,10 +20,6 @@ hi MatchParen cterm=underline ctermbg=none ctermfg=blue
 "Install
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install --frozen-lockfile --production',
-  \ 'branch': 'release/0.x'
-  \ }
 Plug 'mattn/emmet-vim'
 Plug 'preservim/nerdtree'
 Plug 'leafgarland/typescript-vim'
