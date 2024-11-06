@@ -41,4 +41,5 @@ RUN \
 	&& $HOME/A/scripts/setup \
 	&& $HOME/A/scripts/backup restore \
 	&& chsh root -s /bin/bash \
-
+	\
+	&& echo "DONE"
