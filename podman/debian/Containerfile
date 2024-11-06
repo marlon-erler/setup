@@ -44,10 +44,10 @@ RUN \
 	&& echo "=== RUNNING SETUP ===" \
 	&& $HOME/A/scripts/setup \
 	&& ls -la $HOME \
-	&& export BAK=$HOME/A/backups \
-	&& $HOME/A/scripts/backup restore \
 	&& export INSTALL=$HOME/A/installers \
 	&& $HOME/A/scripts/install-local \
+	&& export BAK=$HOME/A/backups \
+	&& $HOME/A/scripts/backup restore \
 	&& chsh root -s /bin/bash
 
 ENV LANG=en_US.UTF-8
