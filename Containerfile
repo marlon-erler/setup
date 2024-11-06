@@ -1,4 +1,4 @@
-ROM alpine
+FROM alpine
 
 RUN \
         echo "starting..." \
