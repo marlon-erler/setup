@@ -39,10 +39,11 @@ RUN \
 	&& git clone https://github.com/marlon-erler/setup $HOME/A \
 	&& echo "=== RUNNING SETUP ===" \
 	&& $HOME/A/scripts/setup \
+	&& export BAK=$HOME/A/backups
+	&& $HOME/A/scripts/backup restore \
 	&& source $HOME/.bashrc \
 	&& echo $A \
 	&& $HOME/A/scripts/install-local \
-	&& $HOME/A/scripts/backup restore \
 	&& chsh root -s /bin/bash \
 	\
 	&& echo "DONE"
