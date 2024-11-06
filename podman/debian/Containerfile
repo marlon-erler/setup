@@ -27,7 +27,8 @@ RUN \
         http-server live-server \
         \
         \
-	&& curl -fsSL https://install.julialang.org | sh \
+	&& curl -fsSL https://install.julialang.org > julia-install \
+	&& sh julia-install -y
 	\
 	\
         && luarocks install luafilesystem \
