@@ -1,7 +1,14 @@
 FROM alpine
 
 RUN \
-	export HOME=/root \
+	echo "starting..." \
+	\
+	\
+	&& export HOME=/root \
+	&& export ~=$HOME \
+	&& mkdir $HOME \
+	&& ls $HOME \
+	&& ls ~ \
 	\
 	\
 	&& apk add --no-cache \
