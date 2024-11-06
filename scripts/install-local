@@ -9,4 +9,4 @@ guard() {
 
 cd $INSTALL
 pwd
-sudo dpkg -i *.deb
+dpkg -i *.deb

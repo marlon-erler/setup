@@ -28,7 +28,7 @@ case $cmd in
 	;;
 
     r)
-	sudo chmod a+rw $dev_path
+	chmod a+rw $dev_path
 	arduino-cli upload -b $board -p $dev_path
 	;;
 
