@@ -5,7 +5,7 @@ RUN \
         \
         \
         && export HOME=/root \
-	&& export PKG=$HOME/A/backups \
+	&& export BAK=$HOME/A/backups \
         \
         \
         && apk add --no-cache \
