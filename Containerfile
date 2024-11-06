@@ -8,7 +8,7 @@ RUN \
         \
         \
         && apk add --no-cache \
-        bash tmux icu-data-full \
+        bash tmux icu-data-full shadow \
         openssh openssh-server openssl rsync \
         git curl vim \
         \
@@ -33,3 +33,6 @@ RUN \
         && git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm \
         && git clone https://github.com/marlon-erler/setup $HOME/A \
         && $HOME/A/scripts/setup \
+	&& $HOME/A/scripts/backup restore \
+	&& chsh /bin/bash \
+	
