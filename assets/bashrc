@@ -6,16 +6,12 @@ export TZ=/usr/share/zoneinfo/UTC
 export A=~/A
 export BAK=$A/backups
 export ASSETS=$A/assets
+export INSTALL=$A/installers
 export SCRIPTS=$A/scripts
+
 export FILES=~/Documents
 export VAULT=$FILES/Vault
 export CODE=$FILES/Code
-
-export PKGLIST=$A/pkglist
-export PKGPERSIST=$A/pkg
-export APT=$PKGPERSIST/apt
-export APTCACHE=$APT/cache
-export APTLIB=$APT/lib
 
 export PATH=$PATH:~/.bun/bin:$SCRIPTS
 
