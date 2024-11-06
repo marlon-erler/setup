@@ -35,5 +35,5 @@ RUN \
         && git clone https://github.com/marlon-erler/setup $HOME/A \
         && $HOME/A/scripts/setup \
 	&& $HOME/A/scripts/backup restore \
-	&& chsh /bin/bash \
+	&& chsh root -s /bin/bash \
 	
