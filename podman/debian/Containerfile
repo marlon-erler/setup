@@ -10,7 +10,7 @@ RUN \
 	&& apt update \
 	&& apt install -y \
 	bash tmux \
-	openssh-server openssl rsync \
+	openssh-server openssl rsync locales \
 	git curl vim \
 	\
 	gcc libc6-dev \
@@ -31,7 +31,6 @@ RUN \
 	\
 	\
 	&& luarocks install luafilesystem \
-	&& luarocks install moonscript \
 	\
 	\
 	&& curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
