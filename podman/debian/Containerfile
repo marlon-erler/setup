@@ -8,16 +8,17 @@ RUN \
 	&& export BAK=$HOME/A/backups \
         \
         \
-        && apk add --no-cache \
-        bash tmux icu-data-full shadow \
-        openssh openssh-server openssl rsync \
+	&& apt update \
+        && apt install -y \
+        bash tmux \
+        openssh-server openssl rsync \
         git curl vim \
         \
-        gcc libc-dev \
+        gcc libc6-dev \
         nodejs npm \
         rsync \
-        python3 py3-pip \
-        lua lua-dev luarocks \
+        python3 python3-pip \
+        lua5.4 luarocks \
         \
         \
         && curl -fsSL https://bun.sh/install | bash \
@@ -29,8 +30,8 @@ RUN \
 	&& curl -fsSL https://install.julialang.org | sh \
 	\
 	\
-        && luarocks-5.1 install luafilesystem \
-        && luarocks-5.1 install moonscript \
+        && luarocks install luafilesystem \
+        && luarocks install moonscript \
         \
         \
         && curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
