@@ -41,4 +41,5 @@ tmux-session 05-FUNDAMENT "
     $fundament/reactivity"
 
 ### FINISH
+cd
 tmux attach -t 01-MAIN
