@@ -1,1 +1,1 @@
- podman run -v ./Documents/:/root/Documents -v ./A:/root/A -ti debian1
+ podman run -p 5901:5901 -v ./Documents/:/root/Documents -v ./A:/root/A -ti debian1

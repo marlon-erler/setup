@@ -1,15 +1,16 @@
 FROM debian
 
-RUN \
-	echo "starting..." \
-	\
-	\
-	&& export HOME=/root \
-	\
-	\
-	&& apt update \
-	&& apt install -y \
-	bash tmux \
+RUN 	apt update \
+&&	apt install -y \
+	bash sudo
+
+RUN	useradd -m -s /bin/bash vd \
+&&	echo "vd:p" | chpasswd \
+&&	usermod -aG sudo vd \
+&&	echo "vd ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/vd
+
+RUN	apt install -y \
+	tmux tightvncserver xfce4 xfce4-terminal dbus-x11 chromium \
 	openssh-server openssl rsync locales \
 	git curl vim \
 	\
@@ -20,34 +21,50 @@ RUN \
 	lua5.4 luarocks \
 	\
 	\
-	&& curl -fsSL https://bun.sh/install | bash \
-	&& npm install -g \
+&&	npm install -g \
 	esbuild \
 	http-server live-server \
 	\
 	\
-	&& curl -fsSL https://install.julialang.org > julia-install \
-	&& sh julia-install -y \
-	\
-	\
-	&& luarocks install luafilesystem \
-	\
-	\
-	&& curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
-	\
-	\
-	&& locale-gen en_US.UTF-8 \
-	\
-	\
-	&& git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm \
-	&& git clone https://github.com/marlon-erler/setup $HOME/A \
-	&& echo "=== RUNNING SETUP ===" \
-	&& $HOME/A/scripts/setup \
-	&& ls -la $HOME \
-	&& export INSTALL=$HOME/A/installers \
-	&& $HOME/A/scripts/install-local \
-	&& export BAK=$HOME/A/backups \
-	&& $HOME/A/scripts/backup restore \
-	&& chsh root -s /bin/bash
+&&	sudo luarocks install luafilesystem
 
-ENV LANG=en_US.UTF-8
+RUN	echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
+
+USER vd
+WORKDIR /home/vd
+
+RUN	curl -fsSL https://bun.sh/install | bash \
+	\
+	\
+&&	curl -fsSL https://install.julialang.org > julia-install \
+&&	sh julia-install -y \
+	\
+	\
+&&	curl -fLo /home/vd/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+RUN	git clone https://github.com/tmux-plugins/tpm /home/vd/.tmux/plugins/tpm \
+&&	git clone https://github.com/marlon-erler/setup /home/vd/A \
+&&	ls /home/vd
+
+RUN	echo "=== RUNNING SETUP ===" \
+&&	ls /home/vd/A/scripts \
+&&	/home/vd/A/scripts/setup \
+&&	export BAK=/home/vd/A/backups \
+&&	/home/vd/A/scripts/backup restore
+
+RUN	mkdir -p /home/vd/.vnc \
+&&	echo "startxfce4" > /home/vd/.vnc/xstartup \
+&&	chmod +x /home/vd/.vnc/xstartup
+
+ENV LANG=en_US.UTF-8 \
+    LC_ALL=en_US.UTF-8
+
+
+USER root
+
+RUN	export INSTALL=/home/vd/A/installers \
+&&	/home/vd/A/scripts/install-local
+
+USER vd
+ENV USER vd
