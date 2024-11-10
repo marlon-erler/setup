@@ -10,7 +10,7 @@ RUN	useradd -m -s /bin/bash vd \
 &&	echo "vd ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/vd
 
 RUN	apt install -y \
-	tmux tightvncserver xfce4 xfce4-terminal dbus-x11 chromium \
+	tmux tightvncserver xfce4 xfce4-terminal dbus-x11 xsel chromium \
 	openssh-server openssl rsync locales \
 	git curl vim \
 	\
