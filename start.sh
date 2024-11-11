@@ -3,4 +3,4 @@ if [ -z "$1" ]; then
 	exit
 fi
 
-podman run -v ./vim:/home/vd/.vim -v ./ssh:/home/vd/.ssh -v ./Documents/:/home/vd/Documents -v ./A:/home/vd/A -p 590$1:5901 -ti debian1
+podman run -v ./vim:/home/vd/.vim -v ./ssh:/home/vd/.ssh -v ./Documents/:/home/vd/Documents -v ./A:/home/vd/A -p 590$1:5901 -p 808$1:8080 -ti debian1
