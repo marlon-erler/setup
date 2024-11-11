@@ -1,1 +1,1 @@
-mkdir -p ssh vim tmux Documents/Code
+mkdir -p ssh vim Documents/Code

@@ -8,4 +8,5 @@ guard() {
 }
 
 backup restore
+rm -rf ~/.config/chromium
 tightvncserver -geometry 1920x1080
