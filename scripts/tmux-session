@@ -10,12 +10,11 @@ guard() {
 name=$1
 guard "$name" "name not specified"
 
-paths=$2
+paths=${@:2}
 
-tmux new-session -d -s $name
+tmux new-session -d -s "$name"
 
 for path in $paths; do
-    base=$(basename $path)
-    mkdir -p $path
-    tmux new-window -n $base -t $name -c $path
+    base=$(basename "$path")
+    tmux new-window -n "$base" -t "$name:" -c "$path"
 done

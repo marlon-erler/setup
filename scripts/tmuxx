@@ -10,38 +10,21 @@ guard() {
 ### 0
 tmux-session 0
 
-### VAULT
-tmux-session 01-MAIN "
-    $A
-    $A/podman/alpine
-    $A/podman/debian
-    $BAK
-    $SCRIPTS
-    $ASSETS"
+### CODE
+for main_folder in $(ls $CODE); do
+    tmux-session $main_folder \
+	$CODE/$main_folder \
+	$CODE/$main_folder/*
+done
 
-### CODE LAB
-lab=$CODE/Lab
-tmux-session 02-CODE-LAB "
-    $lab/Julia
-    $lab/Lua
-    $lab/R"
-
-### OMN
-omn=$CODE/OMN
-tmux-session 03-OMN "
-    $omn/wiki"
-
-### LED
-tmux-session 04-LED "
-    $CODE/LED-Strip"
-
-### FUNDAMENT
-fundament=$CODE/Fundament
-tmux-session 05-FUNDAMENT "
-    $fundament/template
-    $fundament/themes
-    $fundament/components
-    $fundament/reactivity"
+### MAIN
+tmux-session 01-MAIN \
+    $A \
+    $A/podman/alpine \
+    $A/podman/debian \
+    $BAK \
+    $SCRIPTS \
+    $ASSETS
 
 ### FINISH
 cd
