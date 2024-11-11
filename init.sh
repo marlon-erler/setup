@@ -1,1 +1,1 @@
-mkdir -p Documents/Code
+mkdir -p ssh Documents/Code
