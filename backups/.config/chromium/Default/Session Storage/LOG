@@ -1,2 +1,5 @@
-2024/11/10-19:46:57.821 4 Creating DB /home/vd/.config/chromium/Default/Session Storage since it was missing.
-2024/11/10-19:47:36.876 4 Delete type=3 #1
+2024/11/11-11:52:33.504 4 Recovering log #6
+2024/11/11-11:52:33.504 4 Level-0 table #8: started
+2024/11/11-11:52:33.507 4 Level-0 table #8: 333 bytes OK
+2024/11/11-11:52:33.520 4 Delete type=0 #6
+2024/11/11-11:52:33.520 4 Delete type=3 #4

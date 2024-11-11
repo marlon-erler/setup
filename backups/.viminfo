@@ -12,15 +12,15 @@
 ~h
 # Command Line History (newest to oldest):
 :qa
-|2,0,1731268088,,"qa"
+|2,0,1731326102,,"qa"
 :call InstallCoc()
-|2,0,1731267932,,"call InstallCoc()"
+|2,0,1731326046,,"call InstallCoc()"
+:PlugInstall
+|2,0,1731326037,,"PlugInstall"
 ::wqa
 |2,0,1731268058,,":wqa"
 :wqa
 |2,0,1731267998,,"wqa"
-:PlugInstall
-|2,0,1731267913,,"PlugInstall"
 :w
 |2,0,1731267878,,"w"
 :qa!
@@ -40,14 +40,14 @@
 |3,0,36,0,1,0,1731267991,"1920x1080"
 
 # File marks:
-'0  11  33  ~/A/scripts/startup
-|4,48,11,33,1731268072,"~/A/scripts/startup"
-'1  2  0  ~/A/scripts/[Plugins]
-|4,49,2,0,1731267929,"~/A/scripts/[Plugins]"
-'2  10  13  ~/A/scripts/startup
-|4,50,10,13,1731267906,"~/A/scripts/startup"
-'3  10  13  ~/A/scripts/startup
-|4,51,10,13,1731267906,"~/A/scripts/startup"
+'0  2  0  ~/A/scripts/startup
+|4,48,2,0,1731326025,"~/A/scripts/startup"
+'1  11  33  ~/A/scripts/startup
+|4,49,11,33,1731268072,"~/A/scripts/startup"
+'2  11  33  ~/A/scripts/startup
+|4,50,11,33,1731268072,"~/A/scripts/startup"
+'3  2  0  ~/A/scripts/[Plugins]
+|4,51,2,0,1731267929,"~/A/scripts/[Plugins]"
 '4  10  13  ~/A/scripts/startup
 |4,52,10,13,1731267906,"~/A/scripts/startup"
 '5  10  13  ~/A/scripts/startup
@@ -56,12 +56,24 @@
 |4,54,10,13,1731267906,"~/A/scripts/startup"
 '7  10  13  ~/A/scripts/startup
 |4,55,10,13,1731267906,"~/A/scripts/startup"
-'8  13  55  ~/A/podman/debian/Containerfile
-|4,56,13,55,1731267890,"~/A/podman/debian/Containerfile"
-'9  1  0  ~/[Plugins]
-|4,57,1,0,1730927756,"~/[Plugins]"
+'8  10  13  ~/A/scripts/startup
+|4,56,10,13,1731267906,"~/A/scripts/startup"
+'9  10  13  ~/A/scripts/startup
+|4,57,10,13,1731267906,"~/A/scripts/startup"
 
 # Jumplist (newest first):
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1731326046,"~/[Plugins]"
+-'  2  0  ~/[Plugins]
+|4,39,2,0,1731326043,"~/[Plugins]"
+-'  5  0  ~/[Plugins]
+|4,39,5,0,1731326042,"~/[Plugins]"
+-'  2  0  ~/A/scripts/startup
+|4,39,2,0,1731326025,"~/A/scripts/startup"
+-'  1  0  ~/A/scripts/startup
+|4,39,1,0,1731326020,"~/A/scripts/startup"
+-'  11  33  ~/A/scripts/startup
+|4,39,11,33,1731268072,"~/A/scripts/startup"
 -'  11  33  ~/A/scripts/startup
 |4,39,11,33,1731268072,"~/A/scripts/startup"
 -'  1  0  ~/A/scripts/startup
@@ -74,12 +86,26 @@
 |4,39,2,0,1731267929,"~/A/scripts/[Plugins]"
 -'  2  0  ~/A/scripts/[Plugins]
 |4,39,2,0,1731267929,"~/A/scripts/[Plugins]"
+-'  2  0  ~/A/scripts/[Plugins]
+|4,39,2,0,1731267929,"~/A/scripts/[Plugins]"
+-'  2  0  ~/A/scripts/[Plugins]
+|4,39,2,0,1731267929,"~/A/scripts/[Plugins]"
+-'  2  0  ~/A/scripts/[Plugins]
+|4,39,2,0,1731267929,"~/A/scripts/[Plugins]"
 -'  5  0  ~/A/scripts/[Plugins]
 |4,39,5,0,1731267920,"~/A/scripts/[Plugins]"
 -'  5  0  ~/A/scripts/[Plugins]
 |4,39,5,0,1731267920,"~/A/scripts/[Plugins]"
 -'  5  0  ~/A/scripts/[Plugins]
 |4,39,5,0,1731267920,"~/A/scripts/[Plugins]"
+-'  5  0  ~/A/scripts/[Plugins]
+|4,39,5,0,1731267920,"~/A/scripts/[Plugins]"
+-'  5  0  ~/A/scripts/[Plugins]
+|4,39,5,0,1731267920,"~/A/scripts/[Plugins]"
+-'  5  0  ~/A/scripts/[Plugins]
+|4,39,5,0,1731267920,"~/A/scripts/[Plugins]"
+-'  10  13  ~/A/scripts/startup
+|4,39,10,13,1731267906,"~/A/scripts/startup"
 -'  10  13  ~/A/scripts/startup
 |4,39,10,13,1731267906,"~/A/scripts/startup"
 -'  10  13  ~/A/scripts/startup
@@ -100,6 +126,30 @@
 |4,39,13,55,1731267890,"~/A/podman/debian/Containerfile"
 -'  13  55  ~/A/podman/debian/Containerfile
 |4,39,13,55,1731267890,"~/A/podman/debian/Containerfile"
+-'  13  55  ~/A/podman/debian/Containerfile
+|4,39,13,55,1731267890,"~/A/podman/debian/Containerfile"
+-'  13  55  ~/A/podman/debian/Containerfile
+|4,39,13,55,1731267890,"~/A/podman/debian/Containerfile"
+-'  13  55  ~/A/podman/debian/Containerfile
+|4,39,13,55,1731267890,"~/A/podman/debian/Containerfile"
+-'  13  55  ~/A/podman/debian/Containerfile
+|4,39,13,55,1731267890,"~/A/podman/debian/Containerfile"
+-'  13  55  ~/A/podman/debian/Containerfile
+|4,39,13,55,1731267890,"~/A/podman/debian/Containerfile"
+-'  13  55  ~/A/podman/debian/Containerfile
+|4,39,13,55,1731267890,"~/A/podman/debian/Containerfile"
+-'  1  0  ~/A/podman/debian/Containerfile
+|4,39,1,0,1731267872,"~/A/podman/debian/Containerfile"
+-'  1  0  ~/A/podman/debian/Containerfile
+|4,39,1,0,1731267872,"~/A/podman/debian/Containerfile"
+-'  1  0  ~/A/podman/debian/Containerfile
+|4,39,1,0,1731267872,"~/A/podman/debian/Containerfile"
+-'  1  0  ~/A/podman/debian/Containerfile
+|4,39,1,0,1731267872,"~/A/podman/debian/Containerfile"
+-'  1  0  ~/A/podman/debian/Containerfile
+|4,39,1,0,1731267872,"~/A/podman/debian/Containerfile"
+-'  1  0  ~/A/podman/debian/Containerfile
+|4,39,1,0,1731267872,"~/A/podman/debian/Containerfile"
 -'  1  0  ~/A/podman/debian/Containerfile
 |4,39,1,0,1731267872,"~/A/podman/debian/Containerfile"
 -'  1  0  ~/A/podman/debian/Containerfile
@@ -136,6 +186,30 @@
 |4,39,1,0,1730927756,"~/[Plugins]"
 -'  1  0  ~/[Plugins]
 |4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
+-'  1  0  ~/[Plugins]
+|4,39,1,0,1730927756,"~/[Plugins]"
 -'  2  0  ~/[Plugins]
 |4,39,2,0,1730927753,"~/[Plugins]"
 -'  5  0  ~/[Plugins]
@@ -176,92 +250,20 @@
 |4,39,2,0,1730927753,"~/[Plugins]"
 -'  5  0  ~/[Plugins]
 |4,39,5,0,1730927753,"~/[Plugins]"
--'  2  0  ~/[Plugins]
-|4,39,2,0,1730927753,"~/[Plugins]"
--'  5  0  ~/[Plugins]
-|4,39,5,0,1730927753,"~/[Plugins]"
--'  2  0  ~/[Plugins]
-|4,39,2,0,1730927753,"~/[Plugins]"
--'  5  0  ~/[Plugins]
-|4,39,5,0,1730927753,"~/[Plugins]"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  18  3  ~/A/scripts/backup
-|4,39,18,3,1730927682,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
--'  1  0  ~/A/scripts/backup
-|4,39,1,0,1730927673,"~/A/scripts/backup"
 
 # History of marks within files (newest to oldest):
 
-> ~/A/scripts/startup
-	*	1731267933	0
+> ~/-MINIMAP-
+	*	1731326046	0
 	"	1	0
+
+> ~/.vimrc
+	*	1731326031	0
+	"	1	0
+
+> ~/A/scripts/startup
+	*	1731326022	0
+	"	2	0
 	^	10	14
 	.	10	13
 	+	10	13
