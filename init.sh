@@ -1,1 +1,1 @@
-mkdir Documents/Code
+mkdir -p Documents/Code
