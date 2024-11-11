@@ -8,4 +8,4 @@ guard() {
 }
 
 backup restore
-tightvncserver -geometry 2560x1440
+tightvncserver -geometry 1920x1080

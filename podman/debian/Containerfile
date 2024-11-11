@@ -68,3 +68,5 @@ RUN	export INSTALL=/home/vd/A/installers \
 
 USER vd
 ENV USER vd
+
+RUN rm -rf /home/vd/.config/chromium
