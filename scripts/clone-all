@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+guard() {
+    if [ -z "$1" ]; then
+	echo "$2"
+	exit
+    fi
+}
+
+mkdir -p \
+    $CODE/Arduino \
+    $CODE/OMN
+
+cd $CODE/Arduino
+git clone git@github.com:marlon-erler/LED-Strip.git
+
+cd $CODE/OMN
+git clone https://github.com/OpenMessagingNetwork/.github.wiki wiki
