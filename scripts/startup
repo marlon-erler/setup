@@ -7,4 +7,5 @@ guard() {
     fi
 }
 
+sudo service ssh start
 tightvncserver -geometry 1920x1080
