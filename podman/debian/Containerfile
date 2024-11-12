@@ -39,6 +39,7 @@ RUN	curl -fsSL https://bun.sh/install | bash \
 	\
 &&	curl -fsSL https://install.julialang.org > julia-install \
 &&	sh julia-install -y \
+&&	rm julia-install \
 	\
 	\
 &&	curl -fLo /home/vd/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -54,13 +55,8 @@ RUN	echo "=== RUNNING SETUP ===" \
 &&	export BAK=/home/vd/A/backups \
 &&	/home/vd/A/scripts/backup restore
 
-RUN	mkdir -p /home/vd/.vnc \
-&&	echo "startxfce4" > /home/vd/.vnc/xstartup \
-&&	chmod +x /home/vd/.vnc/xstartup
-
 ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8
-
 
 USER root
 
