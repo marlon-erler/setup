@@ -1,4 +1,4 @@
-"Theme
+uTheme
 set number
 syntax on
 colorscheme zellner
@@ -32,7 +32,6 @@ function InstallCoc()
     :CocInstall coc-tsserver 
     :CocInstall coc-css
     :CocInstall coc-python
-    :CocInstall coc-julia
     :CocInstall coc-lua
     :CocInstall coc-r-lsp
 endfunction
