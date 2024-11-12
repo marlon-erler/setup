@@ -1,4 +1,4 @@
-uTheme
+"Theme
 set number
 syntax on
 colorscheme zellner
