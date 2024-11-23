@@ -8,7 +8,7 @@ guard() {
 }
 
 ### 0
-tmux-session 0
+tmux-session 0 $CODE
 
 ### CODE
 for main_folder in $(ls $CODE); do
