@@ -178,6 +178,7 @@ inoremap <silent> <expr>  coc#pum#visible() ? coc#pum#confirm() : "\"
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
+set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=en
 set nomodeline
@@ -201,11 +202,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +27 tmuxx
+badd +31 tmuxx
+badd +0 dev
 argglobal
 %argdel
 $argadd tmuxx
-edit tmuxx
+edit dev
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -222,11 +224,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 158 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 31 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 239 + 135) / 271)
 argglobal
 enew
-file NERD_tree_tab_1
+file NERD_tree_tab_2
 balt tmuxx
 let s:cpo_save=&cpo
 set cpo&vim
@@ -407,6 +409,7 @@ setlocal nowrap
 setlocal wrapmargin=0
 wincmd w
 argglobal
+balt tmuxx
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -540,16 +543,16 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 48 - ((47 * winheight(0) + 24) / 49)
+let s:l = 1 - ((0 * winheight(0) + 28) / 56)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 48
+keepjumps 1
 normal! 0
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 158 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 31 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 239 + 135) / 271)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
@@ -564,6 +567,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

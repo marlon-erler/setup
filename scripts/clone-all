@@ -9,14 +9,22 @@ guard() {
 
 mkdir -p \
     $CODE/Arduino \
+    $CODE/Commercial \
+    $CODE/Junk \
     $CODE/OMN \
-    $CODE/Junk
+    $CODE/Other
 
 cd $CODE/Arduino
 git clone git@github.com:marlon-erler/LED-Strip.git
 
-cd $CODE/OMN
-git clone git@github.com:OpenMessagingNetwork/.github.wiki wiki
+cd $CODE/Commercial
+git clone git@github.com:marlon-erler/Fahrschulkartei.git
 
 cd $CODE/Junk
 git clone git@github.com:marlon-erler/ganzflicker.git
+
+cd $CODE/OMN
+git clone git@github.com:OpenMessagingNetwork/.github.wiki wiki
+
+cd $CODE/Other
+git clone git@github.com:marlon-erler/rfsdb.git
