@@ -37,7 +37,11 @@ WORKDIR /home/vd
 RUN	curl -fsSL https://bun.sh/install | bash \
 	\
 	\
-&&	curl -fLo /home/vd/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+&&	curl -fLo /home/vd/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
+&&	mkdir -p ~/.vim/pack/airblade/start \
+&&	cd ~/.vim/pack/airblade/start \
+&&	git clone https://github.com/airblade/vim-gitgutter.git \
+&&	vim -u NONE -c "helptags vim-gitgutter/doc" -c q
 
 
 RUN	git clone https://github.com/tmux-plugins/tpm /home/vd/.tmux/plugins/tpm \
