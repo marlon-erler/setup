@@ -35,6 +35,10 @@ case $cmd in
 	git commit -m "$message"
 	;;
 
+    amd)
+	git commit --amend
+	;;
+
     fmt)
 	prettier . --write
 	;;
