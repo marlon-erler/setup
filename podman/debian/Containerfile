@@ -10,20 +10,27 @@ RUN	useradd -m -s /bin/bash vd \
 &&	echo "vd ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/vd
 
 RUN	apt install -y \
-	tmux tightvncserver xfce4 xfce4-terminal dbus-x11 xsel \
+	neofetch tmux tightvncserver xfce4 xfce4-terminal dbus-x11 xsel \
         firefox-esr \
 	openssh-server openssl rsync locales \
 	git curl vim \
 	\
 	gcc libc6-dev \
-	nodejs npm \
 	rsync \
 	python3 python3-pip \
 	lua5.4 luarocks \
-	\
-	\
-&&	npm install -g \
-	esbuild \
+
+USER vd
+WORKDIR /home/vd
+
+RUN 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+&&	source ~/.bashrc
+&&	nvm install node
+
+RUN	curl -fsSL https://bun.sh/install | bash \
+
+RUN	npm install -g \
+	esbuild typescript \
 	http-server live-server \
 	\
 	\
@@ -31,13 +38,7 @@ RUN	apt install -y \
 
 RUN	echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 
-USER vd
-WORKDIR /home/vd
-
-RUN	curl -fsSL https://bun.sh/install | bash \
-	\
-	\
-&&	curl -fLo /home/vd/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
+RUN	curl -fLo /home/vd/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 &&	mkdir -p ~/.vim/pack/airblade/start \
 &&	cd ~/.vim/pack/airblade/start \
 &&	git clone https://github.com/airblade/vim-gitgutter.git \
