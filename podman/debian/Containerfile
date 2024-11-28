@@ -18,32 +18,31 @@ RUN	apt install -y \
 	gcc libc6-dev \
 	rsync \
 	python3 python3-pip \
-	lua5.4 luarocks \
+	lua5.4 luarocks
+
+RUN	echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 
 USER vd
 WORKDIR /home/vd
 
-RUN 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
-&&	source ~/.bashrc
-&&	nvm install node
+RUN	sudo luarocks install luafilesystem
 
-RUN	curl -fsSL https://bun.sh/install | bash \
-
-RUN	npm install -g \
+RUN 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash \
+&&	export NVM_DIR="$HOME/.nvm" \
+&&	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
+&&	nvm install node \
+&&	node --version && npm --version \
+&&	npm install -g \
 	esbuild typescript \
 	http-server live-server \
-	\
-	\
-&&	sudo luarocks install luafilesystem
 
-RUN	echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
+RUN	curl -fsSL https://bun.sh/install | bash
 
 RUN	curl -fLo /home/vd/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 &&	mkdir -p ~/.vim/pack/airblade/start \
 &&	cd ~/.vim/pack/airblade/start \
 &&	git clone https://github.com/airblade/vim-gitgutter.git \
 &&	vim -u NONE -c "helptags vim-gitgutter/doc" -c q
-
 
 RUN	git clone https://github.com/tmux-plugins/tpm /home/vd/.tmux/plugins/tpm \
 &&	git clone https://github.com/marlon-erler/setup /home/vd/A \
