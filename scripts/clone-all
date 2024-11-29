@@ -12,7 +12,8 @@ mkdir -p \
     $CODE/Commercial \
     $CODE/Junk \
     $CODE/OMN \
-    $CODE/Other
+    $CODE/Other \
+    $CODE/PWAF
 
 cd $CODE/Arduino
 git clone git@github.com:marlon-erler/LED-Strip.git
@@ -28,3 +29,10 @@ git clone git@github.com:OpenMessagingNetwork/.github.wiki wiki
 
 cd $CODE/Other
 git clone git@github.com:marlon-erler/pfsdb.git
+
+cd $CODE/PWAF
+git clone git@github.com:pwa-fundament/components.git
+git clone git@github.com:pwa-fundament/reactivity.git
+git clone git@github.com:pwa-fundament/stylesheet.git
+git clone git@github.com:pwa-fundament/themes.git
+git clone git@github.com:pwa-fundament/template.git

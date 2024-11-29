@@ -11,6 +11,7 @@ RUN	useradd -m -s /bin/bash vd \
 
 RUN	apt install -y \
 	neofetch tmux tightvncserver xfce4 xfce4-terminal dbus-x11 xsel \
+	fuse libfuse2 \
         firefox-esr \
 	openssh-server openssl rsync locales \
 	git curl vim \
@@ -34,7 +35,7 @@ RUN 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | 
 &&	node --version && npm --version \
 &&	npm install -g \
 	esbuild typescript \
-	http-server live-server \
+	http-server live-server
 
 RUN	curl -fsSL https://bun.sh/install | bash
 
