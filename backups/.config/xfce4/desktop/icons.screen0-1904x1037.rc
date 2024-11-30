@@ -1,6 +1,14 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
+[/home/vd/Documents]
+row=4
+col=0
+
+[/home/vd/A]
+row=3
+col=0
+
 [Trash]
 row=0
 col=0

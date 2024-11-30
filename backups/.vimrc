@@ -24,7 +24,6 @@ Plug 'mattn/emmet-vim'
 Plug 'preservim/nerdtree'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'wfxr/minimap.vim'
 call plug#end()
 
 function InstallCoc()
@@ -67,6 +66,7 @@ function FixMinimap()
 endfunction
 
 nnoremap <C-s> :call SaveSession()
+nnoremap <C-m> :call FixMinimap()
 
 "Init
 autocmd VimEnter * call timer_start(5, { tid -> execute('call FixMinimap()')})
