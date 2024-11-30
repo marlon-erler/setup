@@ -7,4 +7,5 @@ guard() {
     fi
 }
 
+rm -rf **/.*.sw*
 vim -S Session.vim

@@ -53,21 +53,7 @@ let g:minimap_auto_start_win_enter = 1
 
 function SaveSession()
     wincmd =
-    MinimapClose
     mksession!
-    Minimap
-    wincmd =
-endfunction
-
-function FixMinimap()
-    MinimapClose
-    Minimap
-    wincmd =
 endfunction
 
 nnoremap <C-s> :call SaveSession()
-nnoremap <C-m> :call FixMinimap()
-
-"Init
-autocmd VimEnter * call timer_start(5, { tid -> execute('call FixMinimap()')})
-

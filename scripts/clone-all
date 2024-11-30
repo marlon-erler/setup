@@ -20,6 +20,8 @@ git clone git@github.com:marlon-erler/LED-Strip.git
 
 cd $CODE/Commercial
 git clone git@github.com:marlon-erler/Fahrschulkartei.git
+ln -s Fahrschulkartei/Frontend Fahrschulkartei-Frontend
+git clone git@github.com:marlon-erler/Fahrschulkartei.wiki.git Fahrschulkartei-wiki
 
 cd $CODE/Junk
 git clone git@github.com:marlon-erler/ganzflicker.git

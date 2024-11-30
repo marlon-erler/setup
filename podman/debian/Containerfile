@@ -26,6 +26,10 @@ RUN	echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 USER vd
 WORKDIR /home/vd
 
+ENV USER vd
+ENV LANG=en_US.UTF-8 \
+    LC_ALL=en_US.UTF-8
+
 RUN	sudo luarocks install luafilesystem
 
 RUN 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash \
@@ -55,15 +59,6 @@ RUN	echo "=== RUNNING SETUP ===" \
 &&	export BAK=/home/vd/A/backups \
 &&	/home/vd/A/scripts/backup restore
 
-ENV LANG=en_US.UTF-8 \
-    LC_ALL=en_US.UTF-8
-
-USER root
-
-RUN	export INSTALL=/home/vd/A/installers \
-&&	/home/vd/A/scripts/install-local
-
-USER vd
-ENV USER vd
+RUN 	mv ~/.vim ~/.vim.bak
 
 RUN rm -rf /home/vd/.config/chromium
