@@ -27,12 +27,12 @@ Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 function InstallCoc()
-    :CocInstall coc-clangd
-    :CocInstall coc-tsserver 
-    :CocInstall coc-css
-    :CocInstall coc-python
-    :CocInstall coc-lua
-    :CocInstall coc-r-lsp
+    CocInstall coc-clangd
+    CocInstall coc-tsserver 
+    CocInstall coc-css
+    CocInstall coc-python
+    CocInstall coc-lua
+    CocInstall coc-r-lsp
 endfunction
 
 "Configuration
@@ -46,14 +46,11 @@ autocmd VimEnter * NERDTree | wincmd p
 "coc
 nmap <leader>rn <Plug>(coc-rename)
 
-"minimap
-let g:minimap_width = 15
-let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
-
 function SaveSession()
     wincmd =
     mksession!
 endfunction
 
 nnoremap <C-s> :call SaveSession()
+
+autocmd VimEnter * wincmd =

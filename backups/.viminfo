@@ -14,30 +14,42 @@
 ~MSle0/Student
 
 # Last Substitute Search Pattern:
-~MSle0~&theory
+~MSle0~&:
 
 # Last Substitute String:
-$practical
+$
 
 # Command Line History (newest to oldest):
-:wqa
-|2,0,1733007221,,"wqa"
 :qa
-|2,0,1733007110,,"qa"
+|2,0,1733150048,,"qa"
+:w
+|2,0,1733150047,,"w"
+:tabnew
+|2,0,1733150015,,"tabnew"
 :call InstallCoc()
-|2,0,1733007018,,"call InstallCoc()"
+|2,0,1733150000,,"call InstallCoc()"
+:q
+|2,0,1733149995,,"q"
+:'<,'>s/:/
+|2,0,1733149993,,"'<,'>s/:/"
+:wincmd =
+|2,0,1733149977,,"wincmd ="
+:call SaveSession()
+|2,0,1733149932,,"call SaveSession()"
+:qa!
+|2,0,1733149913,,"qa!"
+:e
+|2,0,1733149902,,"e"
+:Qa!
+|2,0,1733008207,,"Qa!"
+:wqa
+|2,0,1733008197,,"wqa"
+:PlugInstall
+|2,0,1733008065,,"PlugInstall"
 :CocCommand
 |2,0,1733007013,,"CocCommand"
 :call CocAction(
 |2,0,1733007009,,"call CocAction("
-:PlugInstall
-|2,0,1733006993,,"PlugInstall"
-:w
-|2,0,1733004346,,"w"
-:call SaveSession()
-|2,0,1733004321,,"call SaveSession()"
-:tabnew
-|2,0,1733004274,,"tabnew"
 :e Backend/Core/server.ts
 |2,0,1733004267,,"e Backend/Core/server.ts"
 :e Backend/Core/index.ts
@@ -48,8 +60,6 @@ $practical
 |2,0,1733004255,,"e Backend/Core/headless.ts"
 :vsp
 |2,0,1733004249,,"vsp"
-:qa!
-|2,0,1733004221,,"qa!"
 :call FixMinimap()
 |2,0,1733004186,,"call FixMinimap()"
 :call Fix
@@ -62,8 +72,6 @@ $practical
 |2,0,1733004019,,"w!"
 :ta
 |2,0,1733003955,,"ta"
-:e
-|2,0,1733003895,,"e"
 :s
 |2,0,1733003397,,"s"
 :W
@@ -112,16 +120,10 @@ $practical
 |2,0,1732977216,,"s/get/getUTC/g"
 :%s/get/getUTC/g
 |2,0,1732977206,,"%s/get/getUTC/g"
-:s/)/).toString()/g
-|2,0,1732976900,,"s/)/).toString()/g"
-:V
-|2,0,1732976895,,"V"
-:%s/)/).toString()/g
-|2,0,1732976882,,"%s/)/).toString()/g"
-:%s/)/).toString()
-|2,0,1732976869,,"%s/)/).toString()"
 
 # Search String History (newest to oldest):
+? :
+|2,1,1733149993,,":"
 ? theory
 |2,1,1732990215,,"theory"
 ? Theory
@@ -190,42 +192,46 @@ $practical
 	nnoremap <C-s> :call SaveSession()
 |3,0,0,1,1,0,1733004115,"nnoremap <C-s> :call SaveSession()"
 ""1	LINE	0
+	"minimap
+	let g:minimap_width = 15
+	let g:minimap_auto_start = 1
+	let g:minimap_auto_start_win_enter = 1
+	
+|3,1,1,1,5,0,1733149954,"\"minimap","let g:minimap_width = 15","let g:minimap_auto_start = 1","let g:minimap_auto_start_win_enter = 1",""
+"2	LINE	0
 	nnoremap <C-m> :call FixMinimap()
 	
 	"Init
 	autocmd VimEnter * call timer_start(5, { tid -> execute('call FixMinimap()')})
 	
-|3,1,1,1,5,0,1733007219,"nnoremap <C-m> :call FixMinimap()","","\"Init","autocmd VimEnter * call timer_start(5, { tid -> execute('call FixMinimap()')})",""
-"2	LINE	0
+|3,0,2,1,5,0,1733007219,"nnoremap <C-m> :call FixMinimap()","","\"Init","autocmd VimEnter * call timer_start(5, { tid -> execute('call FixMinimap()')})",""
+"3	LINE	0
 	function FixMinimap()
 	    MinimapClose
 	    Minimap
 	    wincmd =
 	endfunction
 	
-|3,0,2,1,6,0,1733007218,"function FixMinimap()","    MinimapClose","    Minimap","    wincmd =","endfunction",""
-"3	LINE	0
+|3,0,3,1,6,0,1733007218,"function FixMinimap()","    MinimapClose","    Minimap","    wincmd =","endfunction",""
+"4	LINE	0
 	    Minimap
 	    wincmd =
-|3,0,3,1,2,0,1733007215,"    Minimap","    wincmd ="
-"4	LINE	0
-	    MinimapClose
-|3,0,4,1,1,0,1733007214,"    MinimapClose"
+|3,0,4,1,2,0,1733007215,"    Minimap","    wincmd ="
 "5	LINE	0
-	    Minimap
-|3,0,5,1,1,0,1733004217,"    Minimap"
+	    MinimapClose
+|3,0,5,1,1,0,1733007214,"    MinimapClose"
 "6	LINE	0
-	import {WebSocket} from "http";
-|3,0,6,1,1,0,1733003595,"import {WebSocket} from \"http\";"
+	    Minimap
+|3,0,6,1,1,0,1733004217,"    Minimap"
 "7	LINE	0
-		const app = Express();
-|3,0,7,1,1,0,1733003430,"	const app = Express();"
+	import {WebSocket} from "http";
+|3,0,7,1,1,0,1733003595,"import {WebSocket} from \"http\";"
 "8	LINE	0
-		app.ws(
-|3,0,8,1,1,0,1733003426,"	app.ws("
+		const app = Express();
+|3,0,8,1,1,0,1733003430,"	const app = Express();"
 "9	LINE	0
-		const app = Express()
-|3,0,9,1,1,0,1733003356,"	const app = Express()"
+		app.ws(
+|3,0,9,1,1,0,1733003426,"	app.ws("
 "a@	CHAR	0
 	4w4wbbdwistudentkbbbbistudentId: string;€kb,, €kb€kb :w
 |3,2,10,0,1,0,1732985530,"4w4wbbdwistudentkbbbbistudentId: string;€kb,, €kb€kb :w"
@@ -237,253 +243,289 @@ $practical
 |3,0,36,0,1,0,1733004121,"SaveSession"
 
 # File marks:
-'0  59  0  ~/.vimrc
-|4,48,59,0,1733007221,"~/.vimrc"
-'1  1  0  ~/[Plugins]
-|4,49,1,0,1733007014,"~/[Plugins]"
-'2  57  4  ~/.vimrc
-|4,50,57,4,1733004348,"~/.vimrc"
-'3  57  4  ~/.vimrc
-|4,51,57,4,1733004348,"~/.vimrc"
-'4  57  4  ~/.vimrc
-|4,52,57,4,1733004348,"~/.vimrc"
-'5  57  4  ~/.vimrc
-|4,53,57,4,1733004348,"~/.vimrc"
-'6  59  4  ~/.vimrc
-|4,54,59,4,1733004348,"~/.vimrc"
-'7  59  4  ~/.vimrc
-|4,55,59,4,1733004348,"~/.vimrc"
-'8  59  4  ~/.vimrc
-|4,56,59,4,1733004348,"~/.vimrc"
-'9  59  4  ~/.vimrc
-|4,57,59,4,1733004348,"~/.vimrc"
+'0  56  18  ~/.vimrc
+|4,48,56,18,1733150048,"~/.vimrc"
+'1  74  0  ~/NERD_tree_tab_1
+|4,49,74,0,1733149996,"~/NERD_tree_tab_1"
+'2  39  0  ~/NERD_tree_tab_1
+|4,50,39,0,1733149996,"~/NERD_tree_tab_1"
+'3  39  0  ~/NERD_tree_tab_1
+|4,51,39,0,1733149996,"~/NERD_tree_tab_1"
+'4  4  0  ~/NERD_tree_tab_1
+|4,52,4,0,1733149996,"~/NERD_tree_tab_1"
+'5  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,53,1,0,1733149979,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+'6  49  0  ~/.vimrc
+|4,54,49,0,1733149956,"~/.vimrc"
+'7  49  0  ~/.vimrc
+|4,55,49,0,1733149956,"~/.vimrc"
+'8  49  0  ~/.vimrc
+|4,56,49,0,1733149956,"~/.vimrc"
+'9  49  0  ~/.vimrc
+|4,57,49,0,1733149956,"~/.vimrc"
 
 # Jumplist (newest first):
--'  59  0  ~/.vimrc
-|4,39,59,0,1733007221,"~/.vimrc"
--'  60  0  ~/.vimrc
-|4,39,60,0,1733007219,"~/.vimrc"
+-'  56  18  ~/.vimrc
+|4,39,56,18,1733150048,"~/.vimrc"
 -'  1  0  ~/.vimrc
-|4,39,1,0,1733007203,"~/.vimrc"
+|4,39,1,0,1733150040,"~/.vimrc"
 -'  1  0  ~/.vimrc
-|4,39,1,0,1733007018,"~/.vimrc"
--'  1  0  ~/[Plugins]
-|4,39,1,0,1733007014,"~/[Plugins]"
--'  1  0  ~/[Plugins]
-|4,39,1,0,1733007014,"~/[Plugins]"
--'  1  0  ~/[Plugins]
-|4,39,1,0,1733007014,"~/[Plugins]"
--'  1  0  ~/[Plugins]
-|4,39,1,0,1733007014,"~/[Plugins]"
--'  2  0  ~/[Plugins]
-|4,39,2,0,1733007003,"~/[Plugins]"
--'  5  0  ~/[Plugins]
-|4,39,5,0,1733007003,"~/[Plugins]"
--'  2  0  ~/[Plugins]
-|4,39,2,0,1733007003,"~/[Plugins]"
--'  5  0  ~/[Plugins]
-|4,39,5,0,1733007003,"~/[Plugins]"
--'  2  0  ~/[Plugins]
-|4,39,2,0,1733007003,"~/[Plugins]"
--'  5  0  ~/[Plugins]
-|4,39,5,0,1733007003,"~/[Plugins]"
--'  2  0  ~/[Plugins]
-|4,39,2,0,1733007003,"~/[Plugins]"
--'  5  0  ~/[Plugins]
-|4,39,5,0,1733007003,"~/[Plugins]"
--'  57  4  ~/.vimrc
-|4,39,57,4,1733004348,"~/.vimrc"
--'  59  4  ~/.vimrc
-|4,39,59,4,1733004348,"~/.vimrc"
--'  59  4  ~/.vimrc
-|4,39,59,4,1733004348,"~/.vimrc"
--'  52  16  ~/.vimrc
-|4,39,52,16,1733004345,"~/.vimrc"
--'  52  16  ~/.vimrc
-|4,39,52,16,1733004345,"~/.vimrc"
--'  52  16  ~/.vimrc
-|4,39,52,16,1733004345,"~/.vimrc"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
-|4,39,1,0,1733004338,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
-|4,39,1,0,1733004338,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
-|4,39,1,0,1733004338,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
-|4,39,1,0,1733004338,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts"
--'  10  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,10,0,1733004333,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  10  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,10,0,1733004333,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  10  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,10,0,1733004333,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  10  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,10,0,1733004333,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004332,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004332,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004332,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004332,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
-|4,39,1,0,1733004323,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
-|4,39,1,0,1733004323,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
-|4,39,1,0,1733004323,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
-|4,39,1,0,1733004323,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004307,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004307,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004307,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004307,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,1,0,1733004290,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  10  23  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,10,23,1733004284,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-|4,39,1,0,1733004282,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-|4,39,1,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
--'  22  0  ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-|4,39,22,0,1733004274,"~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts"
+|4,39,1,0,1733150000,"~/.vimrc"
+-'  74  0  ~/NERD_tree_tab_1
+|4,39,74,0,1733149996,"~/NERD_tree_tab_1"
+-'  39  0  ~/NERD_tree_tab_1
+|4,39,39,0,1733149996,"~/NERD_tree_tab_1"
+-'  39  0  ~/NERD_tree_tab_1
+|4,39,39,0,1733149996,"~/NERD_tree_tab_1"
+-'  4  0  ~/NERD_tree_tab_1
+|4,39,4,0,1733149996,"~/NERD_tree_tab_1"
+-'  106  2  ~/NERD_tree_tab_1
+|4,39,106,2,1733149984,"~/NERD_tree_tab_1"
+-'  1  0  ~/NERD_tree_tab_1
+|4,39,1,0,1733149984,"~/NERD_tree_tab_1"
+-'  71  2  ~/NERD_tree_tab_1
+|4,39,71,2,1733149984,"~/NERD_tree_tab_1"
+-'  71  2  ~/NERD_tree_tab_1
+|4,39,71,2,1733149984,"~/NERD_tree_tab_1"
+-'  1  0  ~/NERD_tree_tab_1
+|4,39,1,0,1733149984,"~/NERD_tree_tab_1"
+-'  36  2  ~/NERD_tree_tab_1
+|4,39,36,2,1733149984,"~/NERD_tree_tab_1"
+-'  1  0  ~/NERD_tree_tab_1
+|4,39,1,0,1733149984,"~/NERD_tree_tab_1"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,1,0,1733149979,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,1,0,1733149979,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,1,0,1733149979,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,1,0,1733149979,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149970,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149970,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149970,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149970,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  49  0  ~/.vimrc
+|4,39,49,0,1733149956,"~/.vimrc"
+-'  49  0  ~/.vimrc
+|4,39,49,0,1733149956,"~/.vimrc"
+-'  49  0  ~/.vimrc
+|4,39,49,0,1733149956,"~/.vimrc"
+-'  49  0  ~/.vimrc
+|4,39,49,0,1733149956,"~/.vimrc"
+-'  56  7  ~/.vimrc
+|4,39,56,7,1733149950,"~/.vimrc"
+-'  56  7  ~/.vimrc
+|4,39,56,7,1733149950,"~/.vimrc"
+-'  56  7  ~/.vimrc
+|4,39,56,7,1733149950,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1733149943,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1733149943,"~/.vimrc"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  42  49  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+|4,39,42,49,1733149939,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149931,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149931,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149931,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149931,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149931,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149931,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149931,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149931,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149913,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149913,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149913,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149913,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149913,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149913,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149913,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149913,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  41  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+|4,39,41,0,1733149906,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149877,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149877,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149877,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149877,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149877,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149877,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149877,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  1  0  ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+|4,39,1,0,1733149877,"~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md"
+-'  10  0  ~/A/scripts/vimm
+|4,39,10,0,1733008278,"~/A/scripts/vimm"
+-'  10  0  ~/A/scripts/vimm
+|4,39,10,0,1733008278,"~/A/scripts/vimm"
+-'  10  0  ~/A/scripts/vimm
+|4,39,10,0,1733008278,"~/A/scripts/vimm"
+-'  10  0  ~/A/scripts/vimm
+|4,39,10,0,1733008278,"~/A/scripts/vimm"
+-'  10  0  ~/A/scripts/vimm
+|4,39,10,0,1733008278,"~/A/scripts/vimm"
 
 # History of marks within files (newest to oldest):
 
 > ~/.vimrc
-	*	1733007220	0
-	"	59	0
-	.	60	0
-	+	60	12
+	*	1733150047	0
+	"	56	18
+	^	56	19
+	.	56	18
+	+	57	12
+	+	52	0
+	+	51	0
+	+	52	0
+	+	54	0
 	+	57	0
-	+	56	0
-	+	57	0
-	+	59	0
-	+	60	0
+	+	56	7
+	+	49	0
+	+	30	0
+	+	56	18
 
 > ~/NERD_tree_tab_1
-	*	1733007198	0
+	*	1733150040	0
+	"	4	0
+	.	1	0
+	+	1	0
+
+> ~/Documents/Code/Commercial/Fahrschulkartei-wiki/04-Methods.md
+	*	1733149978	0
+	"	1	0
+
+> ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
+	*	1733149970	0
+	"	4	36
+
+> ~/Documents/Code/Commercial/Fahrschulkartei-wiki/02-Classes.md
+	*	1733149970	0
+	"	35	0
+
+> ~/Documents/Code/Commercial/Fahrschulkartei-wiki/NERD_tree_tab_2
+	*	1733149970	0
+	"	4	0
+	.	1	0
+	+	1	0
+
+> ~/A/scripts/vimm
+	*	1733008262	0
+	"	10	0
+	^	9	0
+	.	10	0
+	+	10	0
+
+> ~/A/scripts/NERD_tree_tab_1
+	*	1733008255	0
 	"	4	0
 	.	1	0
 	+	1	0
 
 > ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/index.ts
-	*	1733004333	0
-	"	10	0
-	^	21	23
-	.	22	0
+	*	1733008246	0
+	"	1	0
+	^	38	2
+	.	39	0
 	+	8	27
 	+	7	26
 	+	15	22
@@ -502,27 +544,43 @@ $practical
 	+	4	0
 	+	21	23
 	+	22	0
+	+	39	0
 
-> ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
-	*	1733004333	0
-	"	1	0
-	^	5	23
-	.	5	22
-	+	5	10
-	+	2	0
-	+	4	17
-	+	4	25
-	+	5	22
-
-> ~/Documents/Code/Commercial/Fahrschulkartei/-MINIMAP-
-	*	1733004333	0
-	"	1	0
-	.	1	0
-	+	1	0
+> ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
+	*	1733008246	0
+	"	22	0
+	^	5	62
+	.	1	5
+	+	18	55
+	+	1	30
+	+	2	27
+	+	7	0
+	+	7	22
+	+	7	9
+	+	14	0
+	+	7	13
+	+	14	0
+	+	7	0
+	+	7	1
+	+	7	22
+	+	7	39
+	+	14	0
+	+	7	45
+	+	8	25
+	+	10	55
+	+	11	44
+	+	10	18
+	+	10	0
+	+	10	18
+	+	4	0
+	+	10	16
+	+	5	61
+	+	3	0
+	+	1	5
 
 > ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Model/model.ts
-	*	1733004332	0
-	"	10	0
+	*	1733008246	0
+	"	40	4
 	.	124	0
 	+	98	49
 	+	102	49
@@ -624,48 +682,37 @@ $practical
 	+	124	0
 
 > ~/Documents/Code/Commercial/Fahrschulkartei/NERD_tree_tab_3
-	*	1733004332	0
+	*	1733008246	0
 	"	4	0
 	.	1	0
 	+	1	0
 
 > ~/Documents/Code/Commercial/Fahrschulkartei/NERD_tree_tab_2
-	*	1733004332	0
+	*	1733008246	0
 	"	4	0
 	.	1	0
 	+	1	0
 
-> ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/server.ts
-	*	1733004324	0
+> ~/.bashrc
+	*	1733008180	0
+	"	144	0
+
+> ~/Documents/Code/Commercial/Fahrschulkartei/Backend/Core/headless.ts
+	*	1733004333	0
 	"	1	0
-	^	5	62
-	.	1	5
-	+	18	55
-	+	1	30
-	+	2	27
-	+	7	0
-	+	7	22
-	+	7	9
-	+	14	0
-	+	7	13
-	+	14	0
-	+	7	0
-	+	7	1
-	+	7	22
-	+	7	39
-	+	14	0
-	+	7	45
-	+	8	25
-	+	10	55
-	+	11	44
-	+	10	18
-	+	10	0
-	+	10	18
-	+	4	0
-	+	10	16
-	+	5	61
-	+	3	0
-	+	1	5
+	^	5	23
+	.	5	22
+	+	5	10
+	+	2	0
+	+	4	17
+	+	4	25
+	+	5	22
+
+> ~/Documents/Code/Commercial/Fahrschulkartei/-MINIMAP-
+	*	1733004333	0
+	"	1	0
+	.	1	0
+	+	1	0
 
 > ~/Documents/Code/Commercial/Fahrschulkartei/NERD_tree_tab_1
 	*	1733004292	0
@@ -1022,10 +1069,6 @@ $practical
 	.	1	0
 	+	1	0
 
-> ~/Documents/Code/Commercial/Fahrschulkartei-wiki/Home.md
-	*	1732889287	0
-	"	1	0
-
 > ~/A/scripts/clone-all
 	*	1732889241	0
 	"	23	54
@@ -1034,12 +1077,6 @@ $practical
 	+	41	0
 	+	24	82
 	+	23	54
-
-> ~/A/scripts/NERD_tree_tab_1
-	*	1732889148	0
-	"	4	0
-	.	1	0
-	+	1	0
 
 > ~/A/scripts/-MINIMAP-
 	*	1732889148	0
