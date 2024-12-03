@@ -40,7 +40,7 @@ case $cmd in
 	;;
 
     fmt)
-	prettier . --write
+	prettier $2 --write
 	;;
 
     *)
