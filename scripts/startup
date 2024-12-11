@@ -9,3 +9,5 @@ guard() {
 
 sudo service ssh start
 tightvncserver -geometry 1920x1080
+sudo service postgres start
+gitea

@@ -11,6 +11,7 @@ RUN	useradd -m -s /bin/bash vd \
 
 RUN	apt install -y \
 	neofetch tmux tightvncserver xfce4 xfce4-terminal dbus-x11 xsel \
+	postgresql postgresql-contrib \
 	fuse libfuse2 \
         firefox-esr \
 	openssh-server openssl rsync locales \
@@ -40,6 +41,9 @@ RUN 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | 
 &&	npm install -g \
 	esbuild typescript prettier \
 	http-server live-server
+
+RUN	wget -O gitea https://dl.gitea.com/gitea/1.22.4/gitea-1.22.4-linux-amd64
+chmod +x gitea
 
 RUN	curl -fsSL https://bun.sh/install | bash
 
